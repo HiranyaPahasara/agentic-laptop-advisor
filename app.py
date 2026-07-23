@@ -263,11 +263,6 @@ with st.form("laptop_request_form"):
             help="Highest price you can pay.",
         )
 
-    extra_notes = st.text_input(
-        "Extra preferences (optional)",
-        placeholder="lightweight, backlit keyboard, quiet fans",
-    )
-
     workload = st.text_area(
         "Workload / use case",
         value="University coding student. Need 16GB RAM and good battery.",
@@ -276,18 +271,66 @@ with st.form("laptop_request_form"):
     )
     submitted = st.form_submit_button("Get Recommendations", use_container_width=True)
 
+def is_valid_workload(text: str) -> bool:
+    """Reject greetings / empty chatty input that is not a real laptop use case."""
+    cleaned = " ".join((text or "").lower().split())
+    if len(cleaned) < 12:
+        return False
+
+    greetings = {
+        "hi",
+        "hello",
+        "hey",
+        "hi how are you",
+        "hello how are you",
+        "how are you",
+        "good morning",
+        "good night",
+        "thanks",
+        "thank you",
+    }
+    if cleaned in greetings:
+        return False
+
+    # Must mention at least one laptop/use-case signal
+    signals = [
+        "laptop",
+        "student",
+        "coding",
+        "program",
+        "office",
+        "game",
+        "gaming",
+        "edit",
+        "video",
+        "design",
+        "ram",
+        "battery",
+        "study",
+        "university",
+        "work",
+        "zoom",
+        "browsing",
+    ]
+    return any(signal in cleaned for signal in signals)
+
+
 if submitted:
     if budget_min > budget_max:
         st.error("Minimum budget cannot be greater than maximum budget.")
         st.stop()
 
-    parts = [
-        f"Budget range {int(budget_min)} to {int(budget_max)} LKR.",
-        workload.strip(),
-    ]
-    if extra_notes.strip():
-        parts.append(extra_notes.strip())
-    user_text = " ".join(parts)
+    if not is_valid_workload(workload):
+        st.warning(
+            "Please describe a real laptop use case (example: university coding, 16GB RAM, good battery). "
+            "Greetings like “Hi how are you” are not valid workload input."
+        )
+        st.stop()
+
+    user_text = (
+        f"Budget range {int(budget_min)} to {int(budget_max)} LKR. "
+        f"{workload.strip()}"
+    )
 
     try:
         with st.status("Running Smart Specs agents...", expanded=True) as status:
@@ -334,6 +377,18 @@ def extract_best_solution(report_markdown: str) -> str:
     return body
 
 
+def report_without_best_solution(report_markdown: str) -> str:
+    """Remove Best Solution section so it is not shown twice in the UI."""
+    text = report_markdown or ""
+    cleaned = re.sub(
+        r"##\s*Best Solution\s*.*?(?=\n##\s|\Z)",
+        "",
+        text,
+        flags=re.IGNORECASE | re.DOTALL,
+    )
+    return re.sub(r"\n{3,}", "\n\n", cleaned).strip()
+
+
 if "final_report" in st.session_state:
     st.write("")
     st.subheader("Results")
@@ -363,7 +418,8 @@ if "final_report" in st.session_state:
     )
 
     with tab_final:
-        st.markdown(st.session_state["final_report"])
+        # Show report once: Best Solution stays only in the highlight card above
+        st.markdown(report_without_best_solution(st.session_state["final_report"]))
         pdf_info = st.session_state.get("pdf_info")
         if pdf_info:
             st.download_button(
