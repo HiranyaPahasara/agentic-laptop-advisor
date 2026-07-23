@@ -377,6 +377,18 @@ def extract_best_solution(report_markdown: str) -> str:
     return body
 
 
+def report_without_best_solution(report_markdown: str) -> str:
+    """Remove Best Solution section so it is not shown twice in the UI."""
+    text = report_markdown or ""
+    cleaned = re.sub(
+        r"##\s*Best Solution\s*.*?(?=\n##\s|\Z)",
+        "",
+        text,
+        flags=re.IGNORECASE | re.DOTALL,
+    )
+    return re.sub(r"\n{3,}", "\n\n", cleaned).strip()
+
+
 if "final_report" in st.session_state:
     st.write("")
     st.subheader("Results")
@@ -406,7 +418,8 @@ if "final_report" in st.session_state:
     )
 
     with tab_final:
-        st.markdown(st.session_state["final_report"])
+        # Show report once: Best Solution stays only in the highlight card above
+        st.markdown(report_without_best_solution(st.session_state["final_report"]))
         pdf_info = st.session_state.get("pdf_info")
         if pdf_info:
             st.download_button(
