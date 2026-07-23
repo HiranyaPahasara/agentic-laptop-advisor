@@ -1,0 +1,10 @@
+Software workload requirements for students
+Zoom / Teams: needs stable CPU and 8GB RAM minimum, 16GB preferred for many tabs
+Microsoft Office: works well on i3/Ryzen 3 with 8GB RAM
+Google Chrome multitasking: 16GB RAM recommended if many tabs + apps open
+VS Code / beginner programming: 8GB minimum, 16GB comfortable
+Python data analysis (pandas): 16GB RAM preferred for larger datasets
+Light photo editing (Photoshop/GIMP): 16GB RAM and SSD strongly recommended
+Video editing (1080p): prefer i5/Ryzen 5 or better + 16GB RAM
+Gaming (light esports): dedicated GPU helps; integrated GPU only for very light games
+Battery note: classroom use needs at least 6+ hours real-world battery

@@ -1,0 +1,11 @@
+Laptop: MSI Modern 15
+Category: Slim productivity / creator-light
+CPU: Intel Core i5 / i7 or AMD Ryzen 5 / 7
+RAM: 8GB or 16GB
+Storage: 512GB SSD
+GPU: Integrated graphics on most configs
+Display: 15.6-inch FHD
+Battery: Around 6-9 hours
+Price range (approx): LKR 240,000 - 360,000
+Best for: University work, coding, presentations, light design
+Limitations: Not for serious gaming; verify RAM upgradeability before buying

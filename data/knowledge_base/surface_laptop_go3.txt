@@ -1,0 +1,11 @@
+Laptop: Microsoft Surface Laptop Go 3
+Category: Compact everyday / notes
+CPU: Intel Core i5
+RAM: 8GB or 16GB
+Storage: 256GB or 512GB SSD
+GPU: Integrated Intel graphics
+Display: 12.4-inch touchscreen
+Battery: Around 10-13 hours claimed typical use
+Price range (approx): LKR 280,000 - 420,000
+Best for: Light study load, notes, browsing, portability
+Limitations: Small screen; 8GB and 256GB configs fill up quickly

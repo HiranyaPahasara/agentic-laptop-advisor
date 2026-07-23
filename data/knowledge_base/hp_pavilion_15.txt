@@ -1,0 +1,11 @@
+Laptop: HP Pavilion 15
+Category: Mid-range general purpose
+CPU: Intel Core i5 / i7 or AMD Ryzen 5 / 7
+RAM: 16GB DDR4
+Storage: 512GB SSD
+GPU: Integrated or entry NVIDIA MX/RTX option on some models
+Display: 15.6-inch FHD
+Battery: Around 6-8 hours
+Price range (approx): LKR 230,000 - 320,000
+Best for: Students who multitask, light creative work, coding basics
+Limitations: Heavier than ultrabooks; gaming performance limited on integrated GPU

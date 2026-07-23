@@ -1,0 +1,11 @@
+Laptop: Apple MacBook Air M2
+Category: Premium ultraportable
+CPU: Apple M2 chip
+RAM: 8GB or 16GB unified memory
+Storage: 256GB or 512GB SSD
+GPU: Integrated Apple GPU (8-core / 10-core depending on config)
+Display: 13.6-inch Liquid Retina
+Battery: Around 15-18 hours typical use
+Price range (approx): LKR 350,000 - 520,000
+Best for: Long battery life, coding, writing, browsing, light creative work
+Limitations: RAM and storage often not upgradeable after purchase; higher price

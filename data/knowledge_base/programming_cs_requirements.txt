@@ -1,0 +1,8 @@
+Workload guide: Programming and Computer Science students
+Recommended minimum: Intel i5 / Ryzen 5, 16GB RAM, 512GB SSD
+Why 16GB RAM: IDEs, browsers, Docker/WSL, and many tabs consume memory quickly
+Integrated GPU is enough for most coding courses
+Dedicated GPU helps for game development, ML experiments, or 3D graphics courses
+Storage tip: 256GB fills fast with IDEs, SDKs, and datasets; prefer 512GB+
+Battery tip: long lab days need 7+ hours or a charger habit
+Buyer warning: avoid non-upgradeable 8GB machines if budget allows 16GB

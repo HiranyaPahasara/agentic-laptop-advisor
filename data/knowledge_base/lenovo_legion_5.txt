@@ -1,0 +1,11 @@
+Laptop: Lenovo Legion 5
+Category: Gaming / high performance
+CPU: AMD Ryzen 5 / Ryzen 7 or Intel Core i5 / i7
+RAM: 16GB DDR4/DDR5 (often upgradeable)
+Storage: 512GB or 1TB SSD
+GPU: NVIDIA RTX 3050 / 4050 / 4060 class (config dependent)
+Display: 15.6-inch FHD high refresh rate (120Hz/144Hz)
+Battery: Around 4-6 hours mixed use; less while gaming
+Price range (approx): LKR 380,000 - 650,000
+Best for: Gaming, 3D work, heavier multitasking, video editing
+Limitations: Heavier and hotter; weaker battery than office laptops

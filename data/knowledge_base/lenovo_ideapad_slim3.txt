@@ -1,0 +1,11 @@
+Laptop: Lenovo IdeaPad Slim 3
+Category: Budget student laptop
+CPU: Intel Core i3 / i5 or AMD Ryzen 3 / 5
+RAM: 8GB DDR4
+Storage: 256GB or 512GB SSD
+GPU: Integrated graphics
+Display: 15.6-inch FHD
+Battery: Around 5-7 hours
+Price range (approx): LKR 150,000 - 220,000
+Best for: Lectures, notes, browsing, Microsoft Office
+Limitations: Not good for gaming or heavy video editing; RAM may be soldered
