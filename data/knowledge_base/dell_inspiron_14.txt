@@ -1,0 +1,11 @@
+Laptop: Dell Inspiron 14
+Category: Portable productivity
+CPU: Intel Core i5 / i7
+RAM: 8GB or 16GB
+Storage: 512GB SSD
+GPU: Integrated Intel graphics
+Display: 14-inch FHD
+Battery: Around 7-10 hours
+Price range (approx): LKR 220,000 - 310,000
+Best for: Portability, classes, office work, coding
+Limitations: Weak for AAA gaming and 3D rendering

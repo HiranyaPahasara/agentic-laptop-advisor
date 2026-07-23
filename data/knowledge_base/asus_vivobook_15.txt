@@ -1,0 +1,11 @@
+Laptop: ASUS Vivobook 15
+Category: Student / Everyday use
+CPU: Intel Core i5 (12th/13th Gen) or AMD Ryzen 5
+RAM: 8GB or 16GB DDR4
+Storage: 512GB SSD
+GPU: Integrated Intel/AMD graphics
+Display: 15.6-inch FHD
+Battery: Around 6-8 hours typical use
+Price range (approx): LKR 180,000 - 260,000
+Best for: Online learning, Zoom, Office, browsing, light editing
+Limitations: 8GB RAM can slow multitasking; check if RAM is upgradeable
