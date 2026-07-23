@@ -1,12 +1,17 @@
 """
 Smart Specs — Streamlit UI
 
-Collects budget + workload, then runs the multi-agent pipeline.
+Collects budget + workload, runs the multi-agent pipeline,
+and shows the final Markdown recommendations.
 """
 
 from __future__ import annotations
 
 import streamlit as st
+
+from agents.feasibility_critic import critique_recommendations
+from agents.intent_router import parse_user_intent
+from agents.rag_advisor import draft_recommendations
 
 st.set_page_config(
     page_title="Smart Specs | Laptop Advisor",
@@ -57,9 +62,35 @@ if submitted:
         parts.append(extra_notes.strip())
     user_text = " ".join(parts)
 
-    st.session_state["user_text"] = user_text
-    st.success("Request captured. Pipeline wiring comes in the next UI update.")
-    st.write("**Parsed request preview:**")
-    st.code(user_text)
+    try:
+        with st.status("Running Smart Specs agents...", expanded=True) as status:
+            st.write("Agent 1 — parsing intent with Groq...")
+            intent = parse_user_intent(user_text)
+
+            st.write("Agent 2 — retrieving specs and drafting recommendations...")
+            draft = draft_recommendations(intent)
+
+            st.write("Agent 3 — auditing budget fit and buyer risks...")
+            final_report = critique_recommendations(intent, draft)
+
+            status.update(label="Recommendations ready", state="complete")
+
+        st.session_state["intent"] = intent
+        st.session_state["draft"] = draft
+        st.session_state["final_report"] = final_report
+
+    except Exception as exc:  # noqa: BLE001 - show friendly UI errors
+        st.error(f"Pipeline failed: {exc}")
+        st.stop()
+
+if "final_report" in st.session_state:
+    st.subheader("Structured intent (Agent 1)")
+    st.json(st.session_state["intent"])
+
+    with st.expander("Advisor draft (Agent 2)", expanded=False):
+        st.markdown(st.session_state["draft"])
+
+    st.subheader("Final recommendations (Agent 3)")
+    st.markdown(st.session_state["final_report"])
 else:
     st.info("Enter your budget and workload, then click **Get Recommendations**.")
