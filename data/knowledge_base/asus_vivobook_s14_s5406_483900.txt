@@ -1,0 +1,11 @@
+Laptop: ASUS Vivobook S 14 S5406 (Copilot+ PC)
+Price: LKR 483,900
+Processor: Intel Core Ultra 7 258V
+RAM: 32GB
+Storage: 1TB SSD
+Display: 14-inch OLED
+Operating System: Windows 11
+Battery: 75Wh
+Best for: premium productivity, AI/Copilot workloads, creators, long battery use
+Limitations: expensive; overkill for basic student Office work
+Notes: recommend only when budget is clearly above LKR 450,000

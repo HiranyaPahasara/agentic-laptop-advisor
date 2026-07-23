@@ -1,0 +1,11 @@
+Laptop: ASUS ROG G16 G614PM
+Price: LKR 715,900
+Processor: AMD Ryzen 9 8940HX
+RAM: 16GB
+Storage: 1TB SSD
+Display: 16-inch WQXGA 2560x1600 165Hz
+Graphics: NVIDIA RTX 5060 8GB
+Operating System: Windows 11 Home
+Best for: high-end gaming, heavy creative work, demanding STEM/GPU tasks
+Limitations: expensive, heavy, short battery under load
+Notes: recommend only for high budgets clearly above LKR 700,000

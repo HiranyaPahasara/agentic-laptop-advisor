@@ -1,0 +1,11 @@
+Laptop: MSI Raider 18 HX AI A2XWJG
+Price: LKR 1,966,800
+Processor: Intel Core Ultra 9-285HX
+RAM: 32GB DDR5
+Storage: 2TB NVMe SSD
+Display: 18-inch QHD+ Mini LED
+Graphics: NVIDIA GeForce RTX 5090 Laptop GPU
+Operating System: Windows 11
+Best for: extreme gaming and professional GPU workloads
+Limitations: extremely expensive and heavy desktop-replacement class
+Notes: only for very high budgets near LKR 2,000,000

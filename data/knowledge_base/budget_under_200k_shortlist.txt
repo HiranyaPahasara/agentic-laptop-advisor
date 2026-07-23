@@ -1,0 +1,10 @@
+Budget shortlist under LKR 200,000
+Use these when user budget_max is 200000 or less.
+Prefer: 512GB SSD over HDD, Windows 11, FHD screen.
+Typical fit: Intel i3 / Ryzen 3 with 8GB RAM.
+Examples:
+- HP 15-fd1315TU i3 around LKR 195,900
+- ASUS Vivobook Go 15 around LKR 189,500
+- HP 15s i3 around LKR 174,900
+Buyer warning: 8GB RAM is the main limit for coding + many browser tabs.
+If user must code seriously, recommend stretching budget toward 16GB models near LKR 230,000-260,000.

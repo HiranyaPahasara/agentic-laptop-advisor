@@ -1,0 +1,11 @@
+Laptop: HP OmniBook X Flip
+Price: LKR 329,900
+Processor: Intel Core Ultra 5 226V
+RAM: 16GB DDR5
+Storage: 512GB NVMe SSD
+Display: 14-inch WUXGA IPS
+Graphics: Intel Arc 130V
+Operating System: Windows 11 Home
+Best for: portable productivity, modern AI PC features, student mobility
+Limitations: premium price vs basic study laptops; verify hinge/flip needs
+Notes: ultraportable-style option around LKR 330,000

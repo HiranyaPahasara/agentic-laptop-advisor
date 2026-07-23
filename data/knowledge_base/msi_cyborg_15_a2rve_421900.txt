@@ -1,0 +1,12 @@
+Laptop: MSI Cyborg 15 A2RVE
+Price: LKR 421,900
+Processor: Intel Core i7-1240H
+RAM: 16GB DDR4
+Storage: 512GB NVMe SSD
+Display: 15.6-inch Full HD 144Hz
+Graphics: NVIDIA RTX 4050 6GB
+Operating System: Windows 11
+Best for: mid gaming and GPU coursework
+Limitations: gaming heat/noise/battery tradeoffs
+Notes: Cyborg RTX 4050 option around LKR 422,000
+Source note: listing text also showed "i7-240H"; treated as i7-1240H from model title

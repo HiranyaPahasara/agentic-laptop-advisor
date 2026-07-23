@@ -1,0 +1,10 @@
+Laptop: ASUS ROG Strix G16 2025 G615MR
+Price: LKR 569,900
+Processor: Intel Core i7-14650HX
+RAM: 16GB DDR5
+Storage: 1TB PCIe SSD
+Display: 16-inch FHD+ IPS 165Hz
+Graphics: NVIDIA GeForce RTX 5060 8GB GDDR7
+Best for: high-performance gaming and heavy creative work
+Limitations: premium price, heat/noise, poor battery under load
+Notes: recommend when budget is near/above LKR 570,000

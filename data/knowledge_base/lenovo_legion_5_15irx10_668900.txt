@@ -1,0 +1,11 @@
+Laptop: Lenovo Legion 5 15IRX10
+Price: LKR 668,900
+Processor: Intel Core i9-14900HX
+RAM: 16GB DDR5
+Storage: 512GB SSD NVMe
+Display: 15.1-inch WQXGA OLED
+Graphics: NVIDIA GeForce RTX 5070 8GB GDDR7
+Operating System: Windows 11
+Best for: premium gaming and high-end creative workloads
+Limitations: expensive; 512GB may be small for large game libraries
+Notes: high-end Legion option near LKR 670,000

@@ -1,0 +1,11 @@
+Laptop: HP 15-fd1003nq
+Price: LKR 294,900
+Processor: Intel Core Ultra 5 125H
+RAM: 24GB DDR5
+Storage: 1TB SSD
+Display: 15.6-inch Full HD IPS
+Graphics: Intel Arc Graphics
+Operating System: DOS
+Best for: heavy multitasking, coding, larger projects needing RAM and storage
+Limitations: DOS means Windows must be installed; not a dedicated gaming GPU
+Notes: strong productivity config near LKR 295,000 if user can install Windows

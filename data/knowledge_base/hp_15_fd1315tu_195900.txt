@@ -1,0 +1,11 @@
+Laptop: HP 15-fd1315TU
+Price: LKR 195,900
+Processor: Intel Core i3-1315U
+RAM: 8GB DDR4
+Storage: 512GB SSD
+Display: 15.6-inch Full HD
+Operating System: Windows 11
+Graphics: Intel Iris Xe Graphics
+Best for: student study, Office, browsing, Zoom classes
+Limitations: 8GB RAM can feel slow with many Chrome tabs + IDE together
+Notes: solid budget HP option under LKR 200,000 for light university work

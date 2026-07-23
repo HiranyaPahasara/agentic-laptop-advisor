@@ -1,0 +1,11 @@
+Laptop: ASUS Vivobook S14 S3407QA
+Price: LKR 353,900
+Processor: Snapdragon X1-26-100
+RAM: 16GB
+Storage: 1TB PCIe Gen4 SSD
+Display: 14-inch Full HD OLED
+Operating System: Windows 11 Home
+Battery: 70Wh
+Best for: portable study, battery life, media, everyday productivity
+Limitations: ARM/Snapdragon app compatibility may differ from Intel/AMD for some developer tools
+Notes: mid-premium ultraportable; check software compatibility before buying for coding

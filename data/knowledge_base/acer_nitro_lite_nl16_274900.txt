@@ -1,0 +1,11 @@
+Laptop: Acer Nitro Lite NL16
+Price: LKR 274,900
+Processor: Intel Core i5-13420H
+RAM: 16GB DDR5
+Storage: 512GB SSD
+Display: 16-inch IPS 1920x1200 Full HD+
+Graphics: NVIDIA GeForce RTX 3050 6GB
+Refresh Rate: 165Hz
+Best for: entry gaming + student hybrid use with enough RAM
+Limitations: gaming laptop battery life and fan noise
+Notes: better RAM config than many 8GB Victus models around this price

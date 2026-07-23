@@ -1,0 +1,11 @@
+Laptop: HP Victus 15-fa2275TX
+Price: LKR 314,900
+Processor: Intel Core i5-13420H
+RAM: 8GB DDR4
+Storage: 512GB PCIe Gen4 NVMe SSD
+Display: 15.6-inch Full HD 144Hz IPS
+Graphics: NVIDIA GeForce RTX 3050 6GB
+Operating System: Windows 11 Home
+Best for: light/medium gaming and GPU-assisted coursework
+Limitations: only 8GB RAM is a major bottleneck; heavier and louder than office laptops
+Notes: over a 250,000 budget; if recommended, warn user to upgrade RAM ASAP

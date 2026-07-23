@@ -1,0 +1,11 @@
+Laptop: Lenovo Legion 5 15AKP10
+Price: LKR 634,900
+Processor: AMD Ryzen AI 7 350 (8C/16T, up to 5.0GHz)
+RAM: 32GB DDR5-5600
+Storage: 512GB M.2 2242 PCIe 4.0x4 NVMe SSD
+Display: 15.6-inch
+Graphics: NVIDIA GeForce RTX 5060 8GB GDDR7
+Operating System: Windows 11
+Best for: high-end gaming, AI/creative workloads, heavy multitasking
+Limitations: expensive; 512GB may be small for large game libraries
+Notes: premium Legion config near LKR 635,000 with strong 32GB RAM

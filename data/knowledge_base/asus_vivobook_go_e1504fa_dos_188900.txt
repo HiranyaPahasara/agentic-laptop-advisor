@@ -1,0 +1,10 @@
+Laptop: ASUS Vivobook Go 15 E1504FA (DOS)
+Price: LKR 188,900
+Processor: AMD Ryzen 3 7320U
+RAM: 8GB LPDDR5 onboard
+Storage: 512GB M.2 NVMe PCIe 3.0 SSD
+Display: 15.6-inch Full HD
+Operating System: DOS
+Best for: basic student use after installing Windows
+Limitations: 8GB soldered RAM likely; DOS requires OS install; not for heavy coding
+Notes: budget option under LKR 200,000

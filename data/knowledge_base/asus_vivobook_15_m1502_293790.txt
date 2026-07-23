@@ -1,0 +1,11 @@
+Laptop: ASUS Vivobook 15 M1502
+Price: LKR 293,790
+Processor: AMD Ryzen 5 150 (up to 4.55GHz, 6 cores / 12 threads)
+RAM: 16GB DDR4
+Storage: 512GB SSD
+Display: 15.6-inch Full HD
+Graphics: AMD Radeon Graphics
+Operating System: Windows 11 Home
+Best for: coding, student multitasking, general productivity
+Limitations: integrated GPU; not ideal for gaming
+Notes: mid-range option near LKR 295,000 with useful 16GB RAM

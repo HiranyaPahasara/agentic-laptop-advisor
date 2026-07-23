@@ -1,0 +1,11 @@
+Laptop: ASUS Vivobook 15 F1504VAP
+Price: LKR 274,900
+Processor: Intel Core i7-150U
+RAM: 16GB DDR4
+Storage: 1TB PCIe Gen4 SSD
+Display: 15.6-inch Full HD Touch
+Graphics: Intel Iris Xe Graphics
+Operating System: Windows 11 Home
+Best for: coding, multitasking, larger storage needs, student/creator light work
+Limitations: integrated GPU; not for serious gaming
+Notes: good mid-range pick when budget is around LKR 270,000-280,000

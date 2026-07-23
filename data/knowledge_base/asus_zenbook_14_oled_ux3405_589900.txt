@@ -1,0 +1,11 @@
+Laptop: ASUS Zenbook 14 OLED UX3405
+Price: LKR 589,900
+Processor: Intel Core Ultra 9-285H
+RAM: 32GB DDR5
+Storage: 1TB NVMe SSD
+Display: 14.0-inch FHD+ OLED 120Hz
+Operating System: Windows 11 Pro
+Weight: 1.28 kg
+Best for: premium portable productivity, creators, long battery travel use
+Limitations: expensive; OLED burn-in care needed with static UI
+Notes: premium ultrabook for budgets near LKR 590,000

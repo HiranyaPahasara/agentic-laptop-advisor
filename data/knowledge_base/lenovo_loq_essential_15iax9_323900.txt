@@ -1,0 +1,11 @@
+Laptop: Lenovo LOQ Essential 15IAX9
+Price: LKR 323,900
+Processor: Intel Core i5-12450HX
+RAM: 16GB DDR5
+Storage: 512GB M.2 PCIe SSD
+Display: 15.6-inch Full HD IPS 144Hz
+Graphics: NVIDIA GeForce RTX 3050 6GB
+Operating System: Windows 11
+Best for: entry gaming + student hybrid workloads
+Limitations: gaming thermals and battery life
+Notes: mid gaming option around LKR 325,000 with 16GB RAM

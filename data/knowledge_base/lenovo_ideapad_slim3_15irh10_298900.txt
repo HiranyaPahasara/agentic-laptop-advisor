@@ -1,0 +1,10 @@
+Laptop: Lenovo IdeaPad Slim 3 15IRH10
+Price: LKR 298,900
+Processor: Intel Core i7-13620H
+RAM: 16GB DDR5
+Storage: 512GB PCIe SSD
+Display: 15.3-inch 1920x1200 WUXGA
+Graphics: Intel UHD Graphics
+Best for: coding, multitasking, student productivity
+Limitations: integrated graphics; not for gaming
+Notes: strong non-gaming pick near LKR 300,000 with i7 + 16GB
