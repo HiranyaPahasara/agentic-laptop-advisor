@@ -50,7 +50,15 @@ Return Markdown only with:
 2) A comparison table with columns:
    Model | Key Specs | Est. Price (LKR) | Best For | Notes
 3) Exactly 2 or 3 laptop recommendations from the context
-4) A short "Why these fit" bullet list
+4) A section called "## Best Solution" that clearly names ONE winner
+   from the table and explains why it is the best fit (budget + workload)
+5) A short "Why these fit" bullet list
+
+Rules for Best Solution:
+- Must be one of the 2-3 recommended models
+- Prefer in-budget options
+- Prefer better RAM/storage match for the workload
+- Do not pick an over-budget laptop as Best Solution
 
 If budget is given, prefer options near/under budget_max.
 If context is weak, say what is uncertain instead of guessing.
@@ -134,6 +142,7 @@ Retrieved context from local knowledge base:
 {context}
 
 Write the Markdown recommendation draft now.
+Remember: include exactly 2-3 laptops in a table, then a clear "## Best Solution" section naming ONE winner.
 """.strip()
 
     messages = [

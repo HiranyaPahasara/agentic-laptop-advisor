@@ -29,10 +29,16 @@ Your job:
    heavy gaming laptops for study-only needs, storage too small, etc.
 3) Keep good recommendations, but add clear buyer warnings
 4) If a laptop is clearly over budget, mark it as OVER BUDGET
+5) Choose exactly ONE Best Solution from the in-budget options
 
 Return Markdown only with these sections:
 ## Final Recommendations
 (keep/adjust the comparison table)
+
+## Best Solution
+- Name the single best laptop from the list
+- Give 2-4 short reasons (budget fit, workload fit, specs, fewer risks)
+- Do NOT choose an OVER BUDGET laptop as Best Solution
 
 ## Feasibility Audit
 - budget check bullets
