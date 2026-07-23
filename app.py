@@ -263,11 +263,6 @@ with st.form("laptop_request_form"):
             help="Highest price you can pay.",
         )
 
-    extra_notes = st.text_input(
-        "Extra preferences (optional)",
-        placeholder="lightweight, backlit keyboard, quiet fans",
-    )
-
     workload = st.text_area(
         "Workload / use case",
         value="University coding student. Need 16GB RAM and good battery.",
@@ -281,13 +276,10 @@ if submitted:
         st.error("Minimum budget cannot be greater than maximum budget.")
         st.stop()
 
-    parts = [
-        f"Budget range {int(budget_min)} to {int(budget_max)} LKR.",
-        workload.strip(),
-    ]
-    if extra_notes.strip():
-        parts.append(extra_notes.strip())
-    user_text = " ".join(parts)
+    user_text = (
+        f"Budget range {int(budget_min)} to {int(budget_max)} LKR. "
+        f"{workload.strip()}"
+    )
 
     try:
         with st.status("Running Smart Specs agents...", expanded=True) as status:
