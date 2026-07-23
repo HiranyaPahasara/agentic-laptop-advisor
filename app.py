@@ -271,9 +271,60 @@ with st.form("laptop_request_form"):
     )
     submitted = st.form_submit_button("Get Recommendations", use_container_width=True)
 
+def is_valid_workload(text: str) -> bool:
+    """Reject greetings / empty chatty input that is not a real laptop use case."""
+    cleaned = " ".join((text or "").lower().split())
+    if len(cleaned) < 12:
+        return False
+
+    greetings = {
+        "hi",
+        "hello",
+        "hey",
+        "hi how are you",
+        "hello how are you",
+        "how are you",
+        "good morning",
+        "good night",
+        "thanks",
+        "thank you",
+    }
+    if cleaned in greetings:
+        return False
+
+    # Must mention at least one laptop/use-case signal
+    signals = [
+        "laptop",
+        "student",
+        "coding",
+        "program",
+        "office",
+        "game",
+        "gaming",
+        "edit",
+        "video",
+        "design",
+        "ram",
+        "battery",
+        "study",
+        "university",
+        "work",
+        "zoom",
+        "browsing",
+    ]
+    return any(signal in cleaned for signal in signals)
+
+
 if submitted:
     if budget_min > budget_max:
         st.error("Minimum budget cannot be greater than maximum budget.")
+        st.stop()
+
+    if not is_valid_workload(workload):
+        st.warning(
+            "Please describe a real laptop use case (example: university coding, 16GB RAM, good battery). "
+            "Greetings like “Hi how are you” are not valid workload input."
+        )
         st.stop()
 
     user_text = (
