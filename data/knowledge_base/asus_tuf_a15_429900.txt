@@ -1,0 +1,11 @@
+Laptop: ASUS TUF Gaming A15 FA506
+Price: LKR 429,900
+Processor: AMD Ryzen 7 7735HS
+RAM: 16GB DDR5
+Storage: 512GB SSD
+Display: 15.6-inch FHD 144Hz
+Operating System: Windows 11
+Graphics: NVIDIA RTX 4050
+Best for: gaming, STEM workloads needing GPU, heavier creative tasks
+Limitations: heavier, louder fans, weaker battery than office laptops
+Notes: only recommend when budget is clearly above LKR 400,000

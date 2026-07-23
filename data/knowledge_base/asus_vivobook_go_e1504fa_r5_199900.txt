@@ -1,0 +1,11 @@
+Laptop: ASUS Vivobook Go E1504FA
+Price: LKR 199,900
+Processor: AMD Ryzen 5 7520U
+RAM: 8GB
+Storage: 512GB SSD
+Display: 15.6-inch Full HD
+Operating System: Windows 11 Home
+Weight: Around 1.65 kg
+Best for: light student work, Office, browsing, Zoom
+Limitations: 8GB RAM limits coding multitasking
+Notes: good Ryzen 5 budget Windows laptop under LKR 200,000

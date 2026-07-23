@@ -1,0 +1,11 @@
+Laptop: ASUS TUF Gaming A16 FA607NUQ
+Price: LKR 495,900
+Processor: AMD Ryzen 7 170 (up to 4.75GHz, 8 cores / 16 threads)
+RAM: 16GB DDR5
+Storage: 512GB PCIe 4.0 NVMe M.2 SSD
+Display: 16-inch FHD+ (1920x1200) 144Hz IPS
+Graphics: NVIDIA GeForce RTX 4050 6GB GDDR6
+Operating System: Windows 11
+Best for: gaming, GPU coursework, heavier creative work
+Limitations: heavy, louder, weaker battery than ultrabooks; 512GB may fill fast with games
+Notes: only recommend when budget is near/above LKR 500,000

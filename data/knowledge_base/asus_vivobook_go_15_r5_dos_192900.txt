@@ -1,0 +1,10 @@
+Laptop: ASUS Vivobook Go 15
+Price: LKR 192,900
+Processor: AMD Ryzen 5 7520U
+RAM: 8GB LPDDR5
+Storage: 512GB SSD
+Display: 15.6-inch Full HD IPS
+Operating System: DOS
+Best for: basic study use after installing Windows
+Limitations: 8GB RAM; DOS requires OS install; RAM may be soldered
+Notes: budget Ryzen 5 option under LKR 200,000

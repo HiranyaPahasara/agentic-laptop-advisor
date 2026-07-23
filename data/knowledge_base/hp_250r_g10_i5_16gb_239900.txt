@@ -1,0 +1,11 @@
+Laptop: HP 250R G10
+Price: LKR 239,900
+Processor: Intel Core i5-120U
+RAM: 16GB DDR4
+Storage: 512GB SSD
+Display: 15.6-inch Full HD IPS
+Graphics: Intel Iris Xe Graphics
+Operating System: DOS
+Best for: coding students and multitasking after installing Windows
+Limitations: DOS requires OS install; not for gaming
+Notes: strong budget/mid pick near LKR 240,000 because it includes 16GB RAM

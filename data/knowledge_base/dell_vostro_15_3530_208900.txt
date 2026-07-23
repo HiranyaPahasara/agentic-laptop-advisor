@@ -1,0 +1,10 @@
+Laptop: Dell Vostro 15 3530
+Price: LKR 208,900
+Processor: Intel Core i5-1334U
+RAM: 8GB DDR4
+Storage: 512GB PCIe NVMe SSD
+Display: 15.6-inch Full HD IPS Touchscreen
+Graphics: Intel Iris Xe Graphics
+Best for: office/student basics, browsing, documents
+Limitations: only 8GB RAM; weak for heavy coding multitasking
+Notes: affordable Dell around LKR 210,000; warn about RAM limit

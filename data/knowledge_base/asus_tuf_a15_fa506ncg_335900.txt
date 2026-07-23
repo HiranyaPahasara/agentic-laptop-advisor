@@ -1,0 +1,11 @@
+Laptop: ASUS TUF Gaming A15 FA506NCG
+Price: LKR 335,900
+Processor: AMD Ryzen 7 7445HS
+RAM: 16GB
+Storage: 512GB SSD
+Display: 15.6-inch Full HD IPS 144Hz
+Graphics: NVIDIA GeForce RTX 3050 4GB
+Operating System: Windows 11
+Best for: entry/mid gaming and GPU coursework
+Limitations: RTX 3050 4GB is entry-level VRAM; gaming thermals
+Notes: TUF gaming option around LKR 336,000

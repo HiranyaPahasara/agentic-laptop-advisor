@@ -1,0 +1,11 @@
+Laptop: ASUS ROG Strix G18 2025
+Price: LKR 725,900
+Processor: AMD Ryzen 9 8940HX
+RAM: 16GB DDR5
+Storage: 1TB PCIe NVMe SSD
+Display: 18-inch WQXGA 240Hz
+Graphics: NVIDIA GeForce RTX 5070 8GB
+Operating System: Windows 11 Home
+Best for: high-end gaming and heavy GPU workloads
+Limitations: very expensive, large/heavy, short battery under load
+Notes: only for high budgets clearly above LKR 700,000

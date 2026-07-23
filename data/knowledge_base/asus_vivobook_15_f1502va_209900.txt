@@ -1,0 +1,10 @@
+Laptop: ASUS Vivobook 15 F1502VA
+Price: LKR 209,900
+Processor: Intel Core i5-13420H
+RAM: 8GB DDR4
+Storage: 512GB NVMe PCIe SSD
+Display: 15.6-inch
+Operating System: DOS
+Best for: basic/mid CPU tasks after installing Windows
+Limitations: only 8GB RAM despite strong i5-13420H; DOS requires OS install
+Notes: CPU is capable but RAM is the bottleneck around LKR 210,000

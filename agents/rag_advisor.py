@@ -48,12 +48,21 @@ Do not invent exact prices or fake model specs.
 Return Markdown only with:
 1) A short intro (2-3 sentences)
 2) A comparison table with columns:
-   Model | Key Specs | Est. Price (LKR) | Best For | Notes
-3) Exactly 2 or 3 laptop recommendations from the context
-4) A short "Why these fit" bullet list
+   Model | Key Specs | Exact Price (LKR) | Best For | Notes
+3) Exactly 2 or 3 laptop recommendations from the EXACT PRICE MATCHES section
+4) A section called "## Best Solution" that clearly names ONE winner
+   from the table and explains why it is the best fit (budget + workload)
+5) A short "Why these fit" bullet list
 
-If budget is given, prefer options near/under budget_max.
-If context is weak, say what is uncertain instead of guessing.
+Hard rules:
+- If "EXACT PRICE MATCHES INSIDE BUDGET RANGE" exists, recommend ONLY from that list
+- Show the exact listed price (single number), not wide old ranges like 230000-320000
+- Never recommend a laptop outside budget_min..budget_max
+- Never mark a laptop as recommended if its exact price is out of range
+- Prefer models that match workload needs (e.g. 16GB RAM for coding)
+- Always pick a Best Solution even if it has tradeoffs
+- Include a short "Known tradeoffs" line under Best Solution
+- If fewer than 2 exact matches exist, say so honestly
 """.strip()
 
 
@@ -100,10 +109,15 @@ def _intent_to_query(intent: dict[str, Any]) -> str:
     if workload:
         parts.append(str(workload))
 
+    budget_min = intent.get("budget_min")
     budget_max = intent.get("budget_max")
     currency = intent.get("currency") or "LKR"
-    if budget_max is not None:
+    if budget_min is not None and budget_max is not None:
+        parts.append(f"budget range {budget_min} to {budget_max} {currency}")
+    elif budget_max is not None:
         parts.append(f"budget under {budget_max} {currency}")
+    elif budget_min is not None:
+        parts.append(f"budget from {budget_min} {currency}")
 
     for key in ("must_have", "priorities", "nice_to_have", "constraints"):
         values = intent.get(key) or []
@@ -124,7 +138,12 @@ def draft_recommendations(intent: dict[str, Any], k: int = 5) -> str:
         raise ValueError("Intent must be a non-empty dictionary from Agent 1.")
 
     query = _intent_to_query(intent)
-    context = retrieve_context(query, k=k)
+    context = retrieve_context(
+        query,
+        k=max(k, 6),
+        budget_min=intent.get("budget_min"),
+        budget_max=intent.get("budget_max"),
+    )
 
     user_prompt = f"""
 User intent JSON:
@@ -134,6 +153,10 @@ Retrieved context from local knowledge base:
 {context}
 
 Write the Markdown recommendation draft now.
+Important:
+- Recommend ONLY laptops from EXACT PRICE MATCHES INSIDE BUDGET RANGE
+- Use exact prices (example: 233900), not broad ranges
+- Include 2-3 laptops if available, then "## Best Solution"
 """.strip()
 
     messages = [

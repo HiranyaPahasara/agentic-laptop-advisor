@@ -1,0 +1,11 @@
+Laptop: Dell Inspiron 15 3520
+Price: LKR 248,900
+Processor: Intel Core i5-1235U
+RAM: 16GB DDR4
+Storage: 512GB SSD
+Display: 15.6-inch Full HD
+Operating System: Windows 11
+Graphics: Intel Iris Xe Graphics
+Best for: university coding, multitasking, Office, light projects
+Limitations: not for AAA gaming or heavy 3D work
+Notes: strong pick near LKR 250,000 when 16GB RAM is required

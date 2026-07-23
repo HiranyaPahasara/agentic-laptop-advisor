@@ -1,0 +1,11 @@
+Laptop: Lenovo LOQ 15ARP10E
+Price: LKR 388,900
+Processor: AMD Ryzen 7 7735HS
+RAM: 16GB DDR5
+Storage: 512GB NVMe SSD
+Display: 15.6-inch Full HD IPS 144Hz
+Graphics: NVIDIA GeForce RTX 4050 6GB GDDR6
+Operating System: Windows 11 Home
+Best for: stronger gaming and GPU tasks than RTX 3050 configs
+Limitations: heavier/louder than office laptops; battery weaker while gaming
+Notes: good step-up LOQ around LKR 390,000

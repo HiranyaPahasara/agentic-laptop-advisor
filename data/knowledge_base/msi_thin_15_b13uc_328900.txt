@@ -1,0 +1,10 @@
+Laptop: MSI Thin 15 B13UC
+Price: LKR 328,900
+Processor: Intel Core i7-13620H
+RAM: 16GB DDR4
+Storage: 512GB NVMe SSD
+Display: 15.6-inch Full HD IPS 144Hz
+Graphics: NVIDIA GeForce RTX 3050 6GB
+Best for: thinner gaming/student hybrid use
+Limitations: thin gaming designs can thermal-throttle; battery weaker under load
+Notes: gaming option around LKR 330,000 with 16GB RAM

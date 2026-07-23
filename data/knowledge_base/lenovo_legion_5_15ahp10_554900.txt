@@ -1,0 +1,11 @@
+Laptop: Lenovo Legion 5 15AHP10
+Price: LKR 554,900
+Processor: AMD Ryzen 7 260
+RAM: 16GB DDR5
+Storage: 512GB NVMe SSD
+Display: 15.3-inch WUXGA IPS
+Graphics: NVIDIA GeForce RTX 5050 8GB
+Best for: high-performance gaming and GPU-heavy work
+Limitations: premium price; gaming laptop battery and fan noise
+Notes: recommend when budget is around LKR 555,000
+Source note: listing title showed Ryzen 7 260; body text showed Ryzen 7 2600 — stored as Ryzen 7 260 from model title
