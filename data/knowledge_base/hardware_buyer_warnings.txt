@@ -1,0 +1,9 @@
+Hardware buyer warnings for laptops
+Soldered RAM: cannot upgrade later; buy the RAM size you need now
+Soldered storage: some ultraportables cannot add a second SSD easily
+Battery marketing vs real use: advertised hours are often best-case
+Gaming laptops: strong performance but heavier, louder, weaker battery
+8GB RAM reality: enough for light Office use, weak for Chrome + Zoom + IDE together
+Price traps: low sticker price with 8GB RAM + 256GB SSD may need expensive upgrades later
+Check ports: HDMI, USB-C, and SD card matter for students and creators
+Thermal note: slim metal laptops can throttle under long heavy loads

@@ -1,0 +1,8 @@
+Workload guide: Video editing and content creation
+Recommended minimum for 1080p editing: i5/Ryzen 5 or better, 16GB RAM, 512GB SSD
+Preferred: 32GB RAM for larger timelines and multitasking
+GPU: dedicated NVIDIA GPU improves export speed and effects
+Display: accurate FHD or better screen helps color decisions
+Storage: external SSD recommended for media libraries
+Battery: editing drains battery fast; expect shorter runtime on battery
+Buyer warning: thin office laptops with integrated graphics struggle with 4K timelines

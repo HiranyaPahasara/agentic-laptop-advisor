@@ -1,0 +1,11 @@
+Laptop: Dell XPS 13
+Category: Premium ultrabook
+CPU: Intel Core i5 / i7 (U-series)
+RAM: 8GB or 16GB (often soldered)
+Storage: 512GB SSD
+GPU: Integrated Intel graphics
+Display: 13.4-inch high-quality FHD/QHD+
+Battery: Around 8-12 hours
+Price range (approx): LKR 420,000 - 700,000
+Best for: Portability, battery life, coding, business/student premium use
+Limitations: Expensive; soldered RAM means buy enough memory upfront

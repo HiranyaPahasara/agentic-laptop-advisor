@@ -1,0 +1,11 @@
+Laptop: Acer Nitro 5
+Category: Budget gaming
+CPU: Intel Core i5 / AMD Ryzen 5
+RAM: 8GB or 16GB
+Storage: 512GB SSD
+GPU: NVIDIA GTX/RTX entry or mid options by config
+Display: 15.6-inch FHD 144Hz common
+Battery: Around 3-6 hours
+Price range (approx): LKR 280,000 - 450,000
+Best for: Gaming on a budget, engineering software that benefits from GPU
+Limitations: Heavier, louder fans, shorter battery for all-day classes

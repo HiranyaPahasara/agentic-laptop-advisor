@@ -1,0 +1,11 @@
+Laptop: ASUS TUF Gaming F15
+Category: Budget-friendly gaming
+CPU: Intel Core i5 / i7
+RAM: 8GB or 16GB (upgrade recommended if 8GB)
+Storage: 512GB SSD
+GPU: NVIDIA RTX 2050 / 3050 / 4050 class depending on model
+Display: 15.6-inch FHD 144Hz
+Battery: Around 4-6 hours light use
+Price range (approx): LKR 320,000 - 520,000
+Best for: Esports and mainstream games, STEM workloads needing GPU
+Limitations: Fan noise under load; not ideal as a pure ultraportable study laptop

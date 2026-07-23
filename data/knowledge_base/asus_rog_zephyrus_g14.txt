@@ -1,0 +1,11 @@
+Laptop: ASUS ROG Zephyrus G14
+Category: Premium compact gaming
+CPU: AMD Ryzen 7 / Ryzen 9
+RAM: 16GB or 32GB
+Storage: 512GB or 1TB SSD
+GPU: NVIDIA RTX 4060-class options depending on year/config
+Display: 14-inch high refresh QHD/FHD
+Battery: Around 6-10 hours light use; lower while gaming
+Price range (approx): LKR 550,000 - 900,000
+Best for: Powerful performance in a smaller body, creators + gamers
+Limitations: High price; can get warm under load
