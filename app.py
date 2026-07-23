@@ -7,6 +7,8 @@ shows Markdown recommendations, and offers PDF download.
 
 from __future__ import annotations
 
+import re
+
 import streamlit as st
 
 from agents.feasibility_critic import critique_recommendations
@@ -161,6 +163,33 @@ header {visibility: hidden;}
   backdrop-filter: blur(8px);
 }
 
+.best-box {
+  margin: 0.4rem 0 1.1rem;
+  padding: 1.05rem 1.15rem;
+  border-radius: 16px;
+  border: 1px solid rgba(45, 212, 191, 0.45);
+  background:
+    linear-gradient(135deg, rgba(20, 184, 166, 0.18), rgba(56, 189, 248, 0.10));
+  box-shadow: 0 10px 30px rgba(2, 8, 23, 0.25);
+}
+
+.best-box .best-label {
+  margin: 0 0 0.35rem;
+  font-family: "Sora", sans-serif;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #99f6e4;
+  font-weight: 700;
+}
+
+.best-box .best-body {
+  margin: 0;
+  color: #e8eef7;
+  line-height: 1.5;
+  font-size: 1.02rem;
+}
+
 section[data-testid="stForm"] {
   background: transparent;
   border: 0;
@@ -289,9 +318,45 @@ if submitted:
         st.error(f"Pipeline failed: {exc}")
         st.stop()
 
+def extract_best_solution(report_markdown: str) -> str:
+    """Pull the Best Solution section for a highlighted UI card."""
+    text = report_markdown or ""
+    match = re.search(
+        r"##\s*Best Solution\s*(.*?)(?=\n##\s|\Z)",
+        text,
+        flags=re.IGNORECASE | re.DOTALL,
+    )
+    if not match:
+        return ""
+    body = match.group(1).strip()
+    # Keep it readable in the highlight card
+    body = re.sub(r"\n{3,}", "\n\n", body)
+    return body
+
+
 if "final_report" in st.session_state:
     st.write("")
     st.subheader("Results")
+
+    best_solution = extract_best_solution(st.session_state["final_report"])
+    if best_solution:
+        # Simple HTML escape for highlight card
+        safe = (
+            best_solution.replace("&", "&amp;")
+            .replace("<", "&lt;")
+            .replace(">", "&gt;")
+            .replace("\n", "<br>")
+        )
+        st.markdown(
+            f"""
+<div class="best-box">
+  <p class="best-label">Best Solution</p>
+  <div class="best-body">{safe}</div>
+</div>
+""",
+            unsafe_allow_html=True,
+        )
+        st.caption("Every laptop has tradeoffs — this is the strongest overall fit in your budget range.")
 
     tab_final, tab_intent, tab_draft = st.tabs(
         ["Final report", "Parsed intent", "Advisor draft"]
@@ -315,4 +380,4 @@ if "final_report" in st.session_state:
     with tab_draft:
         st.markdown(st.session_state["draft"])
 else:
-    st.caption("Enter your budget and workload, then click Get Recommendations.")
+    st.caption("Enter your budget range and workload, then click Get Recommendations.")

@@ -29,17 +29,22 @@ Your job:
 2) Flag risks: soldered/non-upgradeable RAM, weak battery, 8GB RAM bottlenecks,
    heavy gaming laptops for study-only needs, storage too small, etc.
 3) Keep good recommendations, but add clear buyer warnings
-4) If a laptop is clearly outside the range, mark it OUT OF BUDGET
-5) Choose exactly ONE Best Solution from options inside the budget range
+4) If a laptop exact price is outside the range, mark it OUT OF BUDGET and do not recommend it
+5) Choose exactly ONE Best Solution from options with exact prices inside the budget range
+6) Prefer exact listed prices from knowledge base (e.g. 233900), not old wide ranges
 
 Return Markdown only with these sections:
 ## Final Recommendations
 (keep/adjust the comparison table)
 
 ## Best Solution
-- Name the single best laptop from the list
-- Give 2-4 short reasons (budget fit, workload fit, specs, fewer risks)
+- ALWAYS pick exactly ONE Best Solution from in-budget options
+- No laptop is perfect: still choose the best overall fit even if it has some risks
+- Name the laptop clearly (bold)
+- Give 2-4 short reasons (budget fit, workload fit, specs)
+- Also add 1 short line: "Known tradeoffs: ..." (honest risks)
 - Do NOT choose an OUT OF BUDGET laptop as Best Solution
+- Do NOT skip Best Solution just because warnings exist
 
 ## Feasibility Audit
 - budget range check bullets
