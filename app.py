@@ -209,12 +209,23 @@ st.markdown(
 
 st.write("")
 st.subheader("Find your laptop")
-st.caption("Enter your budget and workload. Smart Specs will recommend 2–3 matching laptops.")
+st.caption(
+    "Set your price range and workload. Smart Specs will recommend 2–3 laptops in that budget and name the Best Solution."
+)
 
 with st.form("laptop_request_form"):
-    col1, col2 = st.columns([1, 1.4])
-    with col1:
-        budget = st.number_input(
+    col_min, col_max = st.columns(2)
+    with col_min:
+        budget_min = st.number_input(
+            "Minimum budget (LKR)",
+            min_value=50000,
+            max_value=2000000,
+            value=180000,
+            step=10000,
+            help="Lowest price you want to consider.",
+        )
+    with col_max:
+        budget_max = st.number_input(
             "Maximum budget (LKR)",
             min_value=50000,
             max_value=2000000,
@@ -222,11 +233,11 @@ with st.form("laptop_request_form"):
             step=10000,
             help="Highest price you can pay.",
         )
-    with col2:
-        extra_notes = st.text_input(
-            "Extra preferences (optional)",
-            placeholder="lightweight, backlit keyboard, quiet fans",
-        )
+
+    extra_notes = st.text_input(
+        "Extra preferences (optional)",
+        placeholder="lightweight, backlit keyboard, quiet fans",
+    )
 
     workload = st.text_area(
         "Workload / use case",
@@ -237,7 +248,14 @@ with st.form("laptop_request_form"):
     submitted = st.form_submit_button("Get Recommendations", use_container_width=True)
 
 if submitted:
-    parts = [f"Budget under {int(budget)} LKR.", workload.strip()]
+    if budget_min > budget_max:
+        st.error("Minimum budget cannot be greater than maximum budget.")
+        st.stop()
+
+    parts = [
+        f"Budget range {int(budget_min)} to {int(budget_max)} LKR.",
+        workload.strip(),
+    ]
     if extra_notes.strip():
         parts.append(extra_notes.strip())
     user_text = " ".join(parts)
@@ -246,6 +264,10 @@ if submitted:
         with st.status("Running Smart Specs agents...", expanded=True) as status:
             st.write("Agent 1 — parsing intent...")
             intent = parse_user_intent(user_text)
+            # Keep the exact UI price range (more reliable than model parsing)
+            intent["budget_min"] = float(budget_min)
+            intent["budget_max"] = float(budget_max)
+            intent["currency"] = "LKR"
 
             st.write("Agent 2 — retrieving specs and drafting recommendations...")
             draft = draft_recommendations(intent)

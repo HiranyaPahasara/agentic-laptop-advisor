@@ -56,11 +56,12 @@ Return Markdown only with:
 
 Rules for Best Solution:
 - Must be one of the 2-3 recommended models
-- Prefer in-budget options
+- Must fit inside budget_min to budget_max when both are given
 - Prefer better RAM/storage match for the workload
-- Do not pick an over-budget laptop as Best Solution
+- Do not pick an over-budget or under-range laptop as Best Solution
 
-If budget is given, prefer options near/under budget_max.
+If a budget range is given, recommend only laptops inside that range.
+If only budget_max is given, stay at/under budget_max.
 If context is weak, say what is uncertain instead of guessing.
 """.strip()
 
@@ -108,10 +109,15 @@ def _intent_to_query(intent: dict[str, Any]) -> str:
     if workload:
         parts.append(str(workload))
 
+    budget_min = intent.get("budget_min")
     budget_max = intent.get("budget_max")
     currency = intent.get("currency") or "LKR"
-    if budget_max is not None:
+    if budget_min is not None and budget_max is not None:
+        parts.append(f"budget range {budget_min} to {budget_max} {currency}")
+    elif budget_max is not None:
         parts.append(f"budget under {budget_max} {currency}")
+    elif budget_min is not None:
+        parts.append(f"budget from {budget_min} {currency}")
 
     for key in ("must_have", "priorities", "nice_to_have", "constraints"):
         values = intent.get(key) or []
