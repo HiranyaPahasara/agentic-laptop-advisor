@@ -219,3 +219,6 @@ __marimo__/
 
 # Local FAISS index (generated, do not push)
 faiss_index/
+
+# Generated PDF reports (keep folder, ignore files)
+reports/*.pdf

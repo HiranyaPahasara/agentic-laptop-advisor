@@ -214,6 +214,31 @@ def generate_pdf_bytes(report_markdown: str) -> bytes:
     return path.read_bytes()
 
 
+def save_pdf_for_download(report_markdown: str, filename: str | None = None) -> dict:
+    """
+    Save a PDF for UI download and return path + bytes.
+
+    Returns:
+      {
+        "path": Path,
+        "bytes": bytes,
+        "filename": str
+      }
+    """
+    if filename:
+        output_path = REPORTS_DIR / filename
+        path = markdown_report_to_pdf(report_markdown, output_path=output_path)
+    else:
+        path = markdown_report_to_pdf(report_markdown)
+
+    data = path.read_bytes()
+    return {
+        "path": path,
+        "bytes": data,
+        "filename": path.name,
+    }
+
+
 if __name__ == "__main__":
     sample = """
 ## Final Recommendations

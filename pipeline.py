@@ -13,17 +13,19 @@ from typing import Any
 
 from agents.feasibility_critic import critique_recommendations
 from agents.intent_router import parse_user_intent
+from agents.pdf_generator import save_pdf_for_download
 from agents.rag_advisor import draft_recommendations
 
 
-def run_recommendation_pipeline(user_text: str) -> dict[str, Any]:
+def run_recommendation_pipeline(user_text: str, make_pdf: bool = True) -> dict[str, Any]:
     """
-    Run the full 3-agent recommendation flow.
+    Run the full agent recommendation flow.
 
     Returns a dict with:
     - intent: Agent 1 JSON
     - draft: Agent 2 Markdown
     - final_report: Agent 3 audited Markdown
+    - pdf: optional dict with path/bytes/filename from Agent 4
     """
     if not user_text or not str(user_text).strip():
         raise ValueError("Please provide a laptop request (budget + workload).")
@@ -37,11 +39,18 @@ def run_recommendation_pipeline(user_text: str) -> dict[str, Any]:
     # Agent 3
     final_report = critique_recommendations(intent, draft)
 
-    return {
+    result: dict[str, Any] = {
         "intent": intent,
         "draft": draft,
         "final_report": final_report,
+        "pdf": None,
     }
+
+    # Agent 4
+    if make_pdf:
+        result["pdf"] = save_pdf_for_download(final_report)
+
+    return result
 
 
 if __name__ == "__main__":
@@ -50,7 +59,7 @@ if __name__ == "__main__":
         "Budget is under 250000 LKR. I need 16GB RAM and decent battery."
     )
     print("Running Smart Specs pipeline...\n")
-    result = run_recommendation_pipeline(sample)
+    result = run_recommendation_pipeline(sample, make_pdf=True)
 
     print("=== Agent 1 Intent ===")
     print(result["intent"])
@@ -58,3 +67,6 @@ if __name__ == "__main__":
     print(result["draft"][:500], "...\n")
     print("=== Agent 3 Final Report ===")
     print(result["final_report"])
+    if result.get("pdf"):
+        print("\n=== Agent 4 PDF ===")
+        print(result["pdf"]["path"])
