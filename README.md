@@ -229,14 +229,14 @@ python -c "from rag.rag_engine import get_laptops_in_budget; print(get_laptops_i
 ## 11. How to use the app
 
 1. Set **Minimum** and **Maximum** budget (LKR)
-2. Enter workload (e.g. university coding, 16GB RAM)
-3. Optional preferences
-4. Click **Get Recommendations**
-5. Review:
-   - highlighted **Best Solution**
-   - comparison table
+2. Enter a real workload (e.g. `University coding student. Need 16GB RAM and good battery.`)
+   - Greetings like “Hi how are you” are rejected
+3. Click **Get Recommendations**
+4. Review:
+   - highlighted **Best Solution** (shown once at the top)
+   - comparison table of 2–3 laptops inside your price range
    - buyer warnings
-6. Download PDF report
+5. Download the PDF report
 
 ---
 
@@ -256,14 +256,49 @@ Semantic commits used throughout (`feat:`, `fix:`, `data:`, `docs:`, `chore:`, `
 
 ## 13. Deployment (Streamlit Community Cloud)
 
-1. Push repo to GitHub
-2. Go to [share.streamlit.io](https://share.streamlit.io)
-3. Deploy `app.py` from `main`
-4. Add secrets:
-   - `GROQ_API_KEY`
-   - optional `OPENROUTER_API_KEY`, `AGENT2_PROVIDER`
-5. Keep the app **live for 2+ weeks** after submission
-6. Paste the public URL at the top of this README
+### Before deploy
+1. Merge latest feature work into `main`
+2. Push `main` to GitHub
+3. Confirm `app.py`, `requirements.txt`, `agents/`, `rag/`, and `data/knowledge_base/` are on GitHub
+4. Do **not** commit `.env` or `venv/`
+
+### Deploy steps
+1. Open [https://share.streamlit.io](https://share.streamlit.io) and sign in with GitHub
+2. Click **Create app** / **New app**
+3. Select:
+   - **Repository:** `HiranyaPahasara/agentic-laptop-advisor`
+   - **Branch:** `main`
+   - **Main file path:** `app.py`
+4. Click **Deploy**
+5. Go to **Settings → Secrets** and add:
+
+```toml
+GROQ_API_KEY = "your_real_groq_key"
+OPENROUTER_API_KEY = "your_openrouter_key"
+AGENT2_PROVIDER = "groq"
+```
+
+6. Wait for the build to finish (first build can take several minutes)
+7. Open the live URL and test budget range + recommendations + PDF download
+8. Paste the live URL at the top of this README (replace the placeholder), then commit:
+
+```bash
+git add README.md
+git commit -m "docs: add Streamlit Community Cloud live app link"
+git push origin main
+```
+
+### Keep it live
+- Keep the Cloud app running for **at least 2 weeks after the deadline**
+- If it sleeps, open the URL once to wake it
+
+### Common deploy issues
+| Problem | Fix |
+|---------|-----|
+| API/key errors | Check Streamlit Secrets names match exactly |
+| Module not found | Ensure package is in `requirements.txt`, redeploy |
+| Slow first request | Normal while embedding model / index warms up |
+| Build failed | Open Manage app → Logs and fix the shown error |
 
 ---
 
@@ -276,6 +311,7 @@ Semantic commits used throughout (`feat:`, `fix:`, `data:`, `docs:`, `chore:`, `
 - ARM/Snapdragon software compatibility is not fully validated automatically
 - Recommendations depend on knowledge-base coverage; missing SKUs cannot be invented correctly
 - Not financial/purchase advice — always verify with sellers before buying
+- Invalid workload text (greetings) is blocked in the UI
 
 ---
 
