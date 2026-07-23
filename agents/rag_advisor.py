@@ -114,6 +114,34 @@ def _intent_to_query(intent: dict[str, Any]) -> str:
     return " | ".join(parts)
 
 
+def _ensure_markdown_table(draft: str) -> str:
+    """
+    Light post-process so the UI always gets a readable Markdown draft.
+    Keeps model content, but adds a clear heading/table hint if missing.
+    """
+    text = draft.strip()
+    if not text:
+        return text
+
+    lower = text.lower()
+    has_table = "|" in text and "---" in text
+    has_heading = text.lstrip().startswith("#") or "recommendation" in lower
+
+    parts: list[str] = []
+    if not has_heading:
+        parts.append("## Laptop Recommendations\n")
+
+    parts.append(text)
+
+    if not has_table:
+        parts.append(
+            "\n\n> Note: Comparison table formatting was incomplete. "
+            "Please re-run if the table is missing."
+        )
+
+    return "\n".join(parts).strip()
+
+
 def draft_recommendations(intent: dict[str, Any], k: int = 5) -> str:
     """
     Agent 2 entry point.
@@ -134,6 +162,10 @@ Retrieved context from local knowledge base:
 {context}
 
 Write the Markdown recommendation draft now.
+Important formatting rules:
+- Include a Markdown table with header row and separator row
+- Columns must be: Model | Key Specs | Est. Price (LKR) | Best For | Notes
+- Recommend exactly 2 or 3 models
 """.strip()
 
     messages = [
@@ -143,7 +175,7 @@ Write the Markdown recommendation draft now.
     draft = _generate_draft(messages)
     if not draft.strip():
         raise ValueError("Agent 2 returned an empty recommendation draft.")
-    return draft.strip()
+    return _ensure_markdown_table(draft)
 
 
 if __name__ == "__main__":
