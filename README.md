@@ -410,9 +410,3 @@ Built as a course project: **Agentic AI Laptop Recommendation System (Smart Spec
 
 
 
-
-|     |     |     |
-| --- | --- | --- |
-|     |     |     |
-
-
