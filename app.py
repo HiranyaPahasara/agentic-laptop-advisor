@@ -265,7 +265,8 @@ with st.form("laptop_request_form"):
 
     workload = st.text_area(
         "Workload / use case",
-        value="University coding student. Need 16GB RAM and good battery.",
+        value="",
+        placeholder="Example: University coding student. Need 16GB RAM and good battery.",
         height=120,
         help="What will you use the laptop for?",
     )
