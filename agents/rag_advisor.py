@@ -16,29 +16,29 @@ Set in .env:
 from __future__ import annotations
 
 import json
-import os
 from typing import Any
 
 from dotenv import load_dotenv
 from groq import Groq
 from openai import OpenAI
 
+from agents.secrets_util import get_secret
 from rag.rag_engine import retrieve_context
 
 load_dotenv()
 
 # Agent 1 uses Groq llama-3.1-8b-instant
 # Agent 2 default uses a different Groq model (still free)
-GROQ_MODEL = os.getenv("AGENT2_GROQ_MODEL", "llama-3.3-70b-versatile")
+GROQ_MODEL = get_secret("AGENT2_GROQ_MODEL", "llama-3.3-70b-versatile")
 
 OPENROUTER_BASE_URL = "https://openrouter.ai/api/v1"
-OPENROUTER_MODEL = os.getenv(
+OPENROUTER_MODEL = get_secret(
     "OPENROUTER_MODEL",
     "meta-llama/llama-3.3-70b-instruct",
 )
 
 # groq | openrouter
-AGENT2_PROVIDER = os.getenv("AGENT2_PROVIDER", "groq").strip().lower()
+AGENT2_PROVIDER = (get_secret("AGENT2_PROVIDER", "groq") or "groq").strip().lower()
 
 SYSTEM_PROMPT = """
 You are Agent 2 (RAG Advisor) for a laptop recommendation system.
@@ -67,9 +67,11 @@ Hard rules:
 
 
 def _chat_with_groq(messages: list[dict[str, str]]) -> str:
-    api_key = os.getenv("GROQ_API_KEY")
+    api_key = get_secret("GROQ_API_KEY")
     if not api_key or api_key == "your_groq_key_here":
-        raise ValueError("GROQ_API_KEY is missing in .env")
+        raise ValueError(
+            "GROQ_API_KEY is missing. Add it to .env locally or Streamlit Secrets on Cloud."
+        )
 
     client = Groq(api_key=api_key)
     response = client.chat.completions.create(
@@ -81,9 +83,11 @@ def _chat_with_groq(messages: list[dict[str, str]]) -> str:
 
 
 def _chat_with_openrouter(messages: list[dict[str, str]]) -> str:
-    api_key = os.getenv("OPENROUTER_API_KEY")
+    api_key = get_secret("OPENROUTER_API_KEY")
     if not api_key or api_key == "your_openrouter_key_here":
-        raise ValueError("OPENROUTER_API_KEY is missing in .env")
+        raise ValueError(
+            "OPENROUTER_API_KEY is missing. Add it to .env locally or Streamlit Secrets on Cloud."
+        )
 
     client = OpenAI(api_key=api_key, base_url=OPENROUTER_BASE_URL)
     response = client.chat.completions.create(

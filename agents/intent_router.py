@@ -8,14 +8,11 @@ structured JSON (budget + workload + preferences) for Agent 2.
 from __future__ import annotations
 
 import json
-import os
 import re
 from typing import Any
 
-from dotenv import load_dotenv
+from agents.secrets_util import get_secret
 from groq import Groq
-
-load_dotenv()
 
 # Fast Groq model for structured parsing
 GROQ_MODEL = "llama-3.1-8b-instant"
@@ -47,10 +44,10 @@ Rules:
 
 
 def _get_groq_client() -> Groq:
-    api_key = os.getenv("GROQ_API_KEY")
+    api_key = get_secret("GROQ_API_KEY")
     if not api_key or api_key == "your_groq_key_here":
         raise ValueError(
-            "GROQ_API_KEY is missing. Put your real key in the .env file."
+            "GROQ_API_KEY is missing. Add it to .env locally or Streamlit Secrets on Cloud."
         )
     return Groq(api_key=api_key)
 

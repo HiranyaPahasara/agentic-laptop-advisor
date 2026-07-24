@@ -8,16 +8,17 @@ Checks budget fit and adds buyer warnings (RAM, battery, upgrade limits).
 from __future__ import annotations
 
 import json
-import os
 from typing import Any
 
 from dotenv import load_dotenv
 from groq import Groq
 
+from agents.secrets_util import get_secret
+
 load_dotenv()
 
 # Different role from Agent 1/2: critic / auditor
-GROQ_MODEL = os.getenv("AGENT3_GROQ_MODEL", "llama-3.1-8b-instant")
+GROQ_MODEL = get_secret("AGENT3_GROQ_MODEL", "llama-3.1-8b-instant")
 
 SYSTEM_PROMPT = """
 You are Agent 3 (Feasibility Critic) for a laptop recommendation system.
@@ -58,9 +59,11 @@ One short paragraph: approve / approve with warnings / revise
 
 
 def _get_groq_client() -> Groq:
-    api_key = os.getenv("GROQ_API_KEY")
+    api_key = get_secret("GROQ_API_KEY")
     if not api_key or api_key == "your_groq_key_here":
-        raise ValueError("GROQ_API_KEY is missing in .env")
+        raise ValueError(
+            "GROQ_API_KEY is missing. Add it to .env locally or Streamlit Secrets on Cloud."
+        )
     return Groq(api_key=api_key)
 
 
