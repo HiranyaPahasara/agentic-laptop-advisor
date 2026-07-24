@@ -330,3 +330,5 @@ Be ready to modify a prompt, document, or UI field live during demo.
 ## License / course use
 
 Built as a course project: **Agentic AI Laptop Recommendation System (Smart Specs)**.
+
+Live URL - https://smartspecs-advisor.streamlit.app/
