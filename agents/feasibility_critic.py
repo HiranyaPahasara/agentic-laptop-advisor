@@ -36,16 +36,19 @@ Your job:
 
 Return Markdown only with these sections:
 ## Final Recommendations
-(keep/adjust the comparison table)
+(keep/adjust the comparison table; include Match % column:
+ Model | Key Specs | Exact Price (LKR) | Match % | Best For | Notes)
 
 ## Best Solution
 - ALWAYS pick exactly ONE Best Solution from in-budget options
 - No laptop is perfect: still choose the best overall fit even if it has some risks
 - Name the laptop clearly (bold)
+- Include: Match score: XX%
 - Give 2-4 short reasons (budget fit, workload fit, specs)
 - Also add 1 short line: "Known tradeoffs: ..." (honest risks)
 - Do NOT choose an OUT OF BUDGET laptop as Best Solution
 - Do NOT skip Best Solution just because warnings exist
+- Match % is 0-100 (budget + workload + specs). Best Solution should have the highest score
 
 ## Feasibility Audit
 - budget range check bullets

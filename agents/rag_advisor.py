@@ -48,10 +48,10 @@ Do not invent exact prices or fake model specs.
 Return Markdown only with:
 1) A short intro (2-3 sentences)
 2) A comparison table with columns:
-   Model | Key Specs | Exact Price (LKR) | Best For | Notes
+   Model | Key Specs | Exact Price (LKR) | Match % | Best For | Notes
 3) Exactly 2 or 3 laptop recommendations from the EXACT PRICE MATCHES section
 4) A section called "## Best Solution" that clearly names ONE winner
-   from the table and explains why it is the best fit (budget + workload)
+   from the table, includes its Match %, and explains why it is best
 5) A short "Why these fit" bullet list
 
 Hard rules:
@@ -62,6 +62,8 @@ Hard rules:
 - Prefer models that match workload needs (e.g. 16GB RAM for coding)
 - Always pick a Best Solution even if it has tradeoffs
 - Include a short "Known tradeoffs" line under Best Solution
+- Match % must be an integer 0-100 based on budget fit + workload fit + specs
+- Best Solution should usually have the highest Match %
 - If fewer than 2 exact matches exist, say so honestly
 """.strip()
 
@@ -160,7 +162,8 @@ Write the Markdown recommendation draft now.
 Important:
 - Recommend ONLY laptops from EXACT PRICE MATCHES INSIDE BUDGET RANGE
 - Use exact prices (example: 233900), not broad ranges
-- Include 2-3 laptops if available, then "## Best Solution"
+- Include Match % (0-100) for each laptop
+- Include 2-3 laptops if available, then "## Best Solution" with Match score
 """.strip()
 
     messages = [

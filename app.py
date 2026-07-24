@@ -183,6 +183,13 @@ header {visibility: hidden;}
   font-weight: 700;
 }
 
+.best-box .best-score {
+  margin: 0 0 0.55rem;
+  font-family: "Sora", sans-serif;
+  font-size: 1.15rem;
+  color: #5eead4;
+}
+
 .best-box .best-body {
   margin: 0;
   color: #e8eef7;
@@ -378,6 +385,22 @@ def extract_best_solution(report_markdown: str) -> str:
     return body
 
 
+def extract_match_percent(best_solution_text: str) -> int | None:
+    """Extract Match score percentage from Best Solution text if present."""
+    match = re.search(
+        r"Match\s*(?:score|%)?\s*[:=]?\s*(\d{1,3})\s*%",
+        best_solution_text or "",
+        flags=re.IGNORECASE,
+    )
+    if not match:
+        # fallback: any standalone xx%
+        match = re.search(r"\b(\d{1,3})\s*%", best_solution_text or "")
+    if not match:
+        return None
+    value = int(match.group(1))
+    return max(0, min(100, value))
+
+
 def report_without_best_solution(report_markdown: str) -> str:
     """Remove Best Solution section so it is not shown twice in the UI."""
     text = report_markdown or ""
@@ -396,17 +419,23 @@ if "final_report" in st.session_state:
 
     best_solution = extract_best_solution(st.session_state["final_report"])
     if best_solution:
-        # Simple HTML escape for highlight card
+        match_pct = extract_match_percent(best_solution)
         safe = (
             best_solution.replace("&", "&amp;")
             .replace("<", "&lt;")
             .replace(">", "&gt;")
             .replace("\n", "<br>")
         )
+        score_html = (
+            f'<p class="best-score">Match score: <strong>{match_pct}%</strong></p>'
+            if match_pct is not None
+            else ""
+        )
         st.markdown(
             f"""
 <div class="best-box">
   <p class="best-label">Best Solution</p>
+  {score_html}
   <div class="best-body">{safe}</div>
 </div>
 """,
@@ -414,27 +443,17 @@ if "final_report" in st.session_state:
         )
         st.caption("Every laptop has tradeoffs — this is the strongest overall fit in your budget range.")
 
-    tab_final, tab_intent, tab_draft = st.tabs(
-        ["Final report", "Parsed intent", "Advisor draft"]
-    )
+    st.markdown("### Recommendations")
+    st.markdown(report_without_best_solution(st.session_state["final_report"]))
 
-    with tab_final:
-        # Show report once: Best Solution stays only in the highlight card above
-        st.markdown(report_without_best_solution(st.session_state["final_report"]))
-        pdf_info = st.session_state.get("pdf_info")
-        if pdf_info:
-            st.download_button(
-                label="Download PDF report",
-                data=pdf_info["bytes"],
-                file_name=pdf_info["filename"],
-                mime="application/pdf",
-                use_container_width=True,
-            )
-
-    with tab_intent:
-        st.json(st.session_state["intent"])
-
-    with tab_draft:
-        st.markdown(st.session_state["draft"])
+    pdf_info = st.session_state.get("pdf_info")
+    if pdf_info:
+        st.download_button(
+            label="Download PDF report",
+            data=pdf_info["bytes"],
+            file_name=pdf_info["filename"],
+            mime="application/pdf",
+            use_container_width=True,
+        )
 else:
     st.caption("Enter your budget range and workload, then click Get Recommendations.")
